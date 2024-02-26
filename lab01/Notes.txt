@@ -1,0 +1,42 @@
+### Task 1 ####
+1. I used a default constructor, a constructor for a single integer argument with a default
+parameter for a value of 0 for the minute, and a constructor with double integer parameters. 
+One constructor was not enough as different outcomes were possible based on the amount of 
+arguments that were passed into the time object based on how time "works".
+
+2. Line 5 is using the ostream insertion operator to utilize the "cout" instance. The intent
+for line 5 is to overload the operator of our "Time" class and have it able to be used by the
+C++ library as the user. Line 6 is using the ostream operator on the first two terms and then 
+repeating again for the last "t3" object.
+
+3. I did not have to re-assign memberwise assignment for my operator overload to work as intended.
+I implemented the (+) overload to simplify r and l value assignment within my program. The (+) 
+operator overload function alleviated any hassle with memberwise assignment. 
+
+4. I overloaded the (+) operator to add a time and an integer parameter. This function would output
+correctly. If I were to code <cout << minute + t3 >, it would give me a compiler error due to not 
+having support for output stream operator to output a time and an integer. 
+
+### Task 2 ####
+
+1.  I implemented one constructor that only creates instances of objects with two string parameters.
+For this class, I optimized for use with one constructor due to the project requirements.
+
+2.  I did not overload the assignment. I overloaded the (+) operator to accept either a Time object
+or an integer object and perform actions as necessary. I created a Time object within the operator 
+overload. The time object would call its member functions to perform logical arithmetic based on the 
+argument and return it. 
+
+3. I implemented all input validation in my set function and call that function to anything needing
+inputs to ints being in the range given. For line 7, I added logic to account for the possiblity of 
+adding hours in terms of minutes and character outputting correctly on the console. 
+
+### REFERENCES ## { I prefer the strictness of textbooks for my resources =) }
+
+Gaddis, T. (2000). Starting Out with C++: From Control Structures through Objects. 
+
+Main, M. G., & Savitch, W. J. (2004). Data structures and other objects using C++ (4th Edition) 
+(Savitch Series). 
+
+SI meeting with TA on Mon Feb 5th, 2024.
+

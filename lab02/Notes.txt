@@ -1,0 +1,53 @@
+## Task 1: 
+
+[LP] What constructors did you need to use? Is one constructor enough? 
+
+I used 2 constructors. One default constructor and one Date constructor that uses 3 int parameters.  A date would be defaulted to always have a day, month, or year. For most of the program, I tried to ensure default compliance in how each date is created.  
+
+[HP] What is the difference between lines 3 and 4? 
+
+Line 3 instantiates a date object from 3 integers. Line 4 instantiates a dateofbirth object from another date object.  In this case, it copies a date object and copies it into a dateofbirth object.  
+
+[HP] Explain how you are performing input validation for the Date and the DateOfBirth class. 
+
+I used a bool to check whether a year is leap year which would then be checked with the month of February. I then used a switch statement that checks the month integer and performs quick checks depending on the value for month, which in turn would check if the day matches the corresponding month.  
+
+[HP] What would be a good way to implement getAge without hard-coding today’s date? 
+
+Utilizing time functions from the standard C library could be used. I commented out the global date variable and created an integer from the array of value of system clock.  
+
+## Task 2: 
+
+[LP] What constructors did you need to use? Is one constructor enough? 
+
+Once again I used a default constructor and a three parameter constructor where two strings and a dateofbirth object, which represents a person.   
+
+[HP] The <fare_discount> field is used to indicate if the passenger receives any discount on the fare. This could be used for children or infants. How did you interpret the <fare_discount> field? Is it necessary to use this field in the class? If not, what alternative would you use?  
+
+This could be for employees, VIP customers such as frequent flyers, senior citizens, and veteran status. I applied a general approach based on the general restrictions of the lab. Realistically, there could be a function to check whether the passenger qualifies for a discount and depending on the status, changes the rate of discount. The discount field could be another class in my opinion. There are several intricacies that could appy to many groups of passengers.  
+
+## Task 3: 
+
+[LP] What constructors did you need to use? Is one constructor enough? 
+
+One constructor was enough for me to be in compliance of the deliverables, but there could be an argument made to include more.  Special cases could be thought of where you need a ticket with no flight such as refund ticket or copy ticket. Also, if there is no passenger and its a general case ticket.  
+
+[HP] Consider the role of classes Time, Flight, Date, DateOfBirth, and Passenger in the Ticket class. Was it necessary to use these many classes and inheritances? Briefly, in a short paragraph, comment on the need for object-oriented design for a project like this. 
+
+As I began constructing and atomizing my functions within each class, it was easier to debug as I could follow along the intended logical path. As more functions were aggregated with other classes, it was easy to lose the function's intent, but as I cleaned up each class and made them simpler, I was able to remove redundant functions.  As functions get more intricate, the necessity of abstracting most things into small finite blocks becomes easier to maintain.  
+
+## References
+
+-- Used to find if year is leap year
+https://www.geeksforgeeks.org/program-check-given-year-leap-year/
+
+-- General question
+chatgpt: Prompt: "What is the reasoning for using utilized list over direct intitialization?"
+
+-- General Classes syntax
+Gaddis, T. (2000). Starting Out with C++: From Control Structures through Objects. 
+
+Main, M. G., & Savitch, W. J. (2004). Data structures and other objects using C++ (4th Edition) 
+(Savitch Series). 
+
+

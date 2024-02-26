@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/a.dir/DateOfBirth.cpp.o CMakeFiles/a.dir/Flight.cpp.o CMakeFiles/a.dir/Passenger.cpp.o CMakeFiles/a.dir/Ticket.cpp.o CMakeFiles/a.dir/Time.cpp.o "CMakeFiles/a.dir/lab2-cmpe126.cpp.o" -o a 
