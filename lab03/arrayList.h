@@ -17,7 +17,7 @@ private:
 
 public:
   arrayList();
-  arrayList(const int&);
+  arrayList(const T&);
   ~arrayList();
   bool isEmpty() const;
   bool isFull() const;
@@ -28,7 +28,7 @@ public:
   void insertAt(int, const T&);
   void insertEnd(const T&);
   void removeAt(int);
-  int retrieveAt(int) const;
+  T retrieveAt(int) const;
   void replaceAt(int, const T&);
   void clearList();
   arrayList<T>& operator=(const arrayList<T>&);
@@ -36,7 +36,7 @@ public:
 
 template <class T>
 // Default Constructor
-arrayList<T>::arrayList(const int& capacity_) {
+arrayList<T>::arrayList(const T& capacity_) {
   if (capacity_ < MAX_SIZE) {
     capacity = capacity_;
   }
@@ -116,15 +116,14 @@ void arrayList<T>::removeAt(int index) {
   if (index < 0 || index >= size) {
     throw out_of_range("Out of Range Removal!");
   }
-  int loopsize = size - 1;
-  for (int i = index; i > loopsize; i++) {
+  for (int i = index; i > size - 1; i++) {
     array[i] = array[i + 1];
   }
   size--;
 }
 
 template <class T>
-int arrayList<T>::retrieveAt(int index) const {
+T arrayList<T>::retrieveAt(int index) const {
   if (index < 0 || index >= size) {
     throw out_of_range("Out of Range Retrieval!");
   }

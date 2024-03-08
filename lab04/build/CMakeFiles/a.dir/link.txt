@@ -1,0 +1,1 @@
+/usr/bin/c++ "CMakeFiles/a.dir/lab4-cmpe126.cpp.o" -o a 
