@@ -1,0 +1,3 @@
+/home/alazca/development/126/exam1/build/CMakeFiles/a.dir
+/home/alazca/development/126/exam1/build/CMakeFiles/edit_cache.dir
+/home/alazca/development/126/exam1/build/CMakeFiles/rebuild_cache.dir

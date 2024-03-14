@@ -1,6 +1,7 @@
-CMakeFiles/a.dir/lab4-cmpe126.cpp.o: \
- /home/alazca/development/126/lab04/lab4-cmpe126.cpp \
- /usr/include/stdc-predef.h /usr/include/c++/13.2.1/iostream \
+CMakeFiles/a.dir/box.cpp.o: /home/alazca/development/126/exam1/box.cpp \
+ /usr/include/stdc-predef.h /home/alazca/development/126/exam1/box.h \
+ /home/alazca/development/126/exam1/imperialWeight.h \
+ /usr/include/c++/13.2.1/iostream \
  /usr/include/c++/13.2.1/bits/requires_hosted.h \
  /usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/c++config.h \
  /usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/os_defines.h \
@@ -135,6 +136,4 @@ CMakeFiles/a.dir/lab4-cmpe126.cpp.o: \
  /usr/include/c++/13.2.1/bits/locale_facets.tcc \
  /usr/include/c++/13.2.1/bits/basic_ios.tcc \
  /usr/include/c++/13.2.1/bits/ostream.tcc /usr/include/c++/13.2.1/istream \
- /usr/include/c++/13.2.1/bits/istream.tcc \
- /home/alazca/development/126/lab04/linkedlist.h \
- /home/alazca/development/126/lab04/sortedLinkList.h
+ /usr/include/c++/13.2.1/bits/istream.tcc

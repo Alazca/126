@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/a.dir/box.cpp.o CMakeFiles/a.dir/imperialWeight.cpp.o CMakeFiles/a.dir/progExam1.cpp.o -o a 

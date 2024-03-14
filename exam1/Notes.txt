@@ -1,0 +1,7 @@
+## References ##
+
+Gaddis, T. (2000). Starting Out with C++: From Control Structures through Objects. 
+
+Main, M. G., & Savitch, W. J. (2004). Data structures and other objects using C++ (4th Edition) 
+(Savitch Series). 
+

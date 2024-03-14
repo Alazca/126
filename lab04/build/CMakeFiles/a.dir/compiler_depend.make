@@ -3,6 +3,7 @@
 
 CMakeFiles/a.dir/lab4-cmpe126.cpp.o: /home/alazca/development/126/lab04/lab4-cmpe126.cpp \
   /home/alazca/development/126/lab04/linkedlist.h \
+  /home/alazca/development/126/lab04/sortedLinkList.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \
@@ -268,6 +269,10 @@ CMakeFiles/a.dir/lab4-cmpe126.cpp.o: /home/alazca/development/126/lab04/lab4-cmp
 
 /usr/include/c++/13.2.1/cwchar:
 
+/usr/include/c++/13.2.1/iosfwd:
+
+/usr/include/c++/13.2.1/cstdlib:
+
 /usr/include/bits/types/timer_t.h:
 
 /usr/include/bits/types/time_t.h:
@@ -297,10 +302,6 @@ CMakeFiles/a.dir/lab4-cmpe126.cpp.o: /home/alazca/development/126/lab04/lab4-cmp
 /usr/include/c++/13.2.1/bits/exception_defines.h:
 
 /usr/include/c++/13.2.1/bits/stl_function.h:
-
-/usr/include/bits/cpu-set.h:
-
-/usr/include/bits/uintn-identity.h:
 
 /usr/include/c++/13.2.1/debug/debug.h:
 
@@ -334,9 +335,9 @@ CMakeFiles/a.dir/lab4-cmpe126.cpp.o: /home/alazca/development/126/lab04/lab4-cmp
 
 /usr/include/asm/errno.h:
 
-/usr/include/bits/types/mbstate_t.h:
+/usr/include/bits/thread-shared-types.h:
 
-/usr/include/bits/types/sigset_t.h:
+/usr/include/c++/13.2.1/bits/new_allocator.h:
 
 /usr/include/features.h:
 
@@ -386,6 +387,8 @@ CMakeFiles/a.dir/lab4-cmpe126.cpp.o: /home/alazca/development/126/lab04/lab4-cmp
 
 /usr/include/asm-generic/errno-base.h:
 
+/home/alazca/development/126/lab04/sortedLinkList.h:
+
 /usr/include/c++/13.2.1/ext/alloc_traits.h:
 
 /usr/include/bits/struct_mutex.h:
@@ -408,6 +411,10 @@ CMakeFiles/a.dir/lab4-cmpe126.cpp.o: /home/alazca/development/126/lab04/lab4-cmp
 
 /usr/include/bits/pthread_stack_min-dynamic.h:
 
+/usr/include/bits/types/mbstate_t.h:
+
+/usr/include/bits/types/sigset_t.h:
+
 /usr/include/bits/floatn.h:
 
 /usr/include/bits/libc-header-start.h:
@@ -426,9 +433,9 @@ CMakeFiles/a.dir/lab4-cmpe126.cpp.o: /home/alazca/development/126/lab04/lab4-cmp
 
 /usr/include/c++/13.2.1/bits/range_access.h:
 
-/usr/include/bits/thread-shared-types.h:
+/usr/include/bits/cpu-set.h:
 
-/usr/include/c++/13.2.1/bits/new_allocator.h:
+/usr/include/bits/uintn-identity.h:
 
 /usr/include/c++/13.2.1/backward/binders.h:
 
@@ -511,10 +518,6 @@ CMakeFiles/a.dir/lab4-cmpe126.cpp.o: /home/alazca/development/126/lab04/lab4-cmp
 /usr/include/bits/wchar.h:
 
 /usr/include/c++/13.2.1/bits/predefined_ops.h:
-
-/usr/include/c++/13.2.1/iosfwd:
-
-/usr/include/c++/13.2.1/cstdlib:
 
 /usr/include/c++/13.2.1/bits/requires_hosted.h:
 
