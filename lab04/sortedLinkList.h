@@ -23,6 +23,7 @@ public:
   int maxListsize() const;
   bool isItemInList(const S&) const;
   void insert(const S&);
+  void remove(const S&);
   S retrieveAt(const int&) const;
   void print() const;
   void clearlist();
@@ -105,27 +106,27 @@ void sortedlinkedlist<S>::clearlist() {
     nextNode = nodePtr->next;
     delete nodePtr;
     nodePtr = nextNode;
+    size--;
   }
-  size = 0;
+  head = nullptr;
 }
 
 template <class S>
 void sortedlinkedlist<S>::insert(const S& element) {
+  if (isFull()) {
+    throw std::out_of_range("INVALID: Target is full!");
+  }
   Node* nodePtr = nullptr;
   Node* prevPtr = nullptr;
   Node* newNode = new Node;
   newNode->data = element;
   newNode->next = nullptr;
-
-  if (isFull()) {
-    throw std::out_of_range("INVALID: Target is full!");
-  }
   if (isEmpty() || element < head->data) {
+    newNode->next = head;
     head = newNode;
-    newNode->next = nullptr;
   }
   nodePtr = head;
-  while (nodePtr != nullptr && nodePtr->data < element) {
+  while (nodePtr != nullptr && nodePtr->data <= element) {
     prevPtr = nodePtr;
     nodePtr = nodePtr->next;
   }
@@ -136,17 +137,74 @@ void sortedlinkedlist<S>::insert(const S& element) {
 }
 
 template <class S>
+void sortedlinkedlist<S>::remove(const S& element) {
+  Node* nodePtr = head;
+  Node* prePtr = nullptr;
+  if (isEmpty()) {
+    std::cout << "List is empty! No node to remove!" << std::endl;
+    return;
+  }
+  if (nodePtr == nullptr) {
+    std::cout << "Element not found in the list!" << std::endl;
+    return;
+  }
+  if (nodePtr->data == element) {
+    head = head->next;
+    delete nodePtr;
+    size--;
+    return;
+  }
+  while (nodePtr != nullptr && nodePtr->data != element) {
+    prePtr = nodePtr;
+    nodePtr = nodePtr->next;
+  }
+  prePtr->next = nodePtr->next;
+  delete nodePtr;
+  size--;
+}
+
+template <class S>
 S sortedlinkedlist<S>::retrieveAt(const int& index) const {
   Node* nodePtr = nullptr;
-
   if (index < 0 || index > size) {
     throw std::out_of_range(
         "INVALID RETRIEVAL: Index or OUT OF RANGE PARAMETERS!");
   }
   nodePtr = head;
-  while (nodePtr->next != nullptr) {
+  for (int i = 0; i < index; ++i) {
     nodePtr = nodePtr->next;
   }
   return nodePtr->data;
+}
+
+template <class S>
+sortedlinkedlist<S>& sortedlinkedlist<S>::operator=(
+    const sortedlinkedlist<S>& rhs) {
+  // Check for self-assignment
+  if (this == &rhs) {
+    return *this;
+  }
+  clearlist();
+  size = rhs.size;
+  max_size = rhs.max_size;
+  if (rhs.head == nullptr) {
+    return *this;
+  }
+  Node* nodePtr = rhs.head;
+  Node* prevPtr = nullptr;
+  while (nodePtr != nullptr) {
+    Node* newNode = new Node;
+    newNode->data = nodePtr->data;
+    newNode->next = nullptr;
+
+    if (prevPtr == nullptr) {
+      head = newNode;
+    } else {
+      prevPtr->next = newNode;
+    }
+    prevPtr = newNode;
+    nodePtr = nodePtr->next;
+  }
+  return *this;
 }
 #endif

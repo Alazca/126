@@ -105,28 +105,17 @@ bool linkedlist<T>::isItemAtEqual(int index, T element) const {
 
 template <class T>
 void linkedlist<T>::clearList() {
-  Node* current = head;
-  while (current != nullptr) {
-    Node* next = current->next;
-    delete current;
-    current = next;
+  Node* nodePtr = head;
+  Node* nextPtr = nullptr;
+  while (nodePtr != nullptr) {
+    nextPtr = nodePtr->next;
+    delete nodePtr;
+    nodePtr = nextPtr;
+    size--;
   }
-  head = nullptr;  // Don't forget to update head pointer
+  head = nullptr;
 }
 
-// template <class T>
-// void linkedlist<T>::clearList() {
-//   Node* nodePtr = head;
-//   Node* nextNode = nullptr;
-//   while (nodePtr != nullptr) {
-//     nextNode = nodePtr->next;
-//     delete nodePtr;
-//     nodePtr = nextNode;
-//   }
-//   head = nullptr;
-//   size = 0;
-// }
-//
 template <class T>
 void linkedlist<T>::insertAt(int index, T element) {
   if (index < 0 || index > size) {
@@ -187,34 +176,36 @@ void linkedlist<T>::removeAt(int index) {
     std::cout << "List is empty! No node to remove!" << std::endl;
     return;
   }
-  if (head->next == 0) {
-    nodePtr = head->next;
-    delete nodePtr;
-    head = head->next;
-  }
   nodePtr = head;
-  while (nodePtr->next != nullptr) {
+  if (index == 0) {
+    head = head->next;
+    delete nodePtr;
+  }
+  for (int i = 0; i < index; i++) {
     prePtr = nodePtr;
     nodePtr = nodePtr->next;
   }
-  if (nodePtr) {
-    prePtr->next = nodePtr->next;
-    delete nodePtr;
-    nodePtr->next = nullptr;
+  prePtr->next = nodePtr->next;
+  delete nodePtr;
+  nodePtr = prePtr->next;
+  while (nodePtr != nullptr) {
+    nodePtr = prePtr;
+    prePtr = prePtr->next;
+    nodePtr = nodePtr->next;
   }
   size--;
 }
 
-template <class T>
-int linkedlist<T>::retrieveAt(int index) {
+template <class t>
+int linkedlist<t>::retrieveAt(int index) {
   Node* nodePtr = nullptr;
 
   if (index < 0 || index > size) {
     throw std::out_of_range(
-        "INVALID RETRIEVAL: Index or OUT OF RANGE PARAMETERS!");
+        "INVALID RETRIEVEVAL: index or out of range parameters!");
   }
   nodePtr = head;
-  while (nodePtr->next != nullptr) {
+  for (int i = 0; i < index; i++) {
     nodePtr = nodePtr->next;
   }
   return nodePtr->data;
@@ -243,38 +234,27 @@ linkedlist<T>& linkedlist<T>::operator=(const linkedlist<T>& rhs) {
   if (this == &rhs) {
     return *this;
   }
-
-  // Clear the existing list
   clearList();
-
-  // Copy the size and max_size from rhs
   size = rhs.size;
   max_size = rhs.max_size;
-
-  // If rhs is empty, just return
   if (rhs.head == nullptr) {
     return *this;
   }
-
-  // Copy nodes from rhs
-  Node* rhsNodePtr = rhs.head;
+  Node* nodePtr = rhs.head;
   Node* prevPtr = nullptr;
-  while (rhsNodePtr != nullptr) {
-    // Create a new node
+  while (nodePtr != nullptr) {
     Node* newNode = new Node;
-    newNode->data = rhsNodePtr->data;
+    newNode->data = nodePtr->data;
     newNode->next = nullptr;
 
-    // If this is the first node being added
     if (prevPtr == nullptr) {
       head = newNode;
     } else {
       prevPtr->next = newNode;
     }
 
-    // Move pointers forward
     prevPtr = newNode;
-    rhsNodePtr = rhsNodePtr->next;
+    nodePtr = nodePtr->next;
   }
 
   return *this;
