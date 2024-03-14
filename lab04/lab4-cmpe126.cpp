@@ -49,9 +49,9 @@ int main() {
   list2.testMax(100);
   cout << "Is list 2 empty now? " << (list2.isEmpty() ? "Yes" : "No") << endl;
   list2.print();
-  list = list2;
   cout << "Checking assignment operator!" << endl;
-  list.print();
+  list = list2;
+  list2.print();
 
   // Task 2
   sortList.print();

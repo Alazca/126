@@ -105,23 +105,30 @@ bool linkedlist<T>::isItemAtEqual(int index, T element) const {
 
 template <class T>
 void linkedlist<T>::clearList() {
-  Node* nodePtr = head;
-  Node* nextNode = nullptr;
-  while (nodePtr != nullptr) {
-    nextNode = nodePtr->next;
-    delete nodePtr;
-    nodePtr = nextNode;
+  Node* current = head;
+  while (current != nullptr) {
+    Node* next = current->next;
+    delete current;
+    current = next;
   }
-  size = 0;
+  head = nullptr;  // Don't forget to update head pointer
 }
 
+// template <class T>
+// void linkedlist<T>::clearList() {
+//   Node* nodePtr = head;
+//   Node* nextNode = nullptr;
+//   while (nodePtr != nullptr) {
+//     nextNode = nodePtr->next;
+//     delete nodePtr;
+//     nodePtr = nextNode;
+//   }
+//   head = nullptr;
+//   size = 0;
+// }
+//
 template <class T>
 void linkedlist<T>::insertAt(int index, T element) {
-  Node* nodePtr = nullptr;
-  Node* newNode = new Node;
-  newNode->data = element;
-  newNode->next = nullptr;
-
   if (index < 0 || index > size) {
     throw std::out_of_range(
         "INVALID INSERTION: INDEX or OUT OF RANGE PARAMETERS!");
@@ -129,25 +136,24 @@ void linkedlist<T>::insertAt(int index, T element) {
   if (isFull()) {
     throw std::out_of_range("INVALID: Target is full!");
   }
-  if (isEmpty()) {
+
+  Node* newNode = new Node;
+  newNode->data = element;
+  newNode->next = nullptr;
+
+  if (isEmpty() || index == 0) {
+    newNode->next = head;
     head = newNode;
-    newNode->next = nullptr;
+    size++;
+    return;
   }
-  nodePtr = head;
-  Node* prevPtr = nullptr;
-  int i = 0;
-  while (nodePtr != nullptr) {
-    prevPtr = nodePtr;
+
+  Node* nodePtr = head;
+  for (int i = 0; i < index - 1; i++) {
     nodePtr = nodePtr->next;
-
-    i++;
-    if (i == index) {
-      break;
-    }
   }
-  prevPtr->next = newNode;
-  newNode->next = nodePtr;
-
+  newNode->next = nodePtr->next;
+  nodePtr->next = newNode;
   size++;
 }
 
@@ -231,12 +237,70 @@ void linkedlist<T>::replaceAt(int index, T element) {
   }
 }
 
-// TODO- FINISH THE ASSIGNMENT OPERATOR
 template <class T>
 linkedlist<T>& linkedlist<T>::operator=(const linkedlist<T>& rhs) {
-  if (this != &rhs) {
-    clearList();
+  // Check for self-assignment
+  if (this == &rhs) {
+    return *this;
   }
+
+  // Clear the existing list
+  clearList();
+
+  // Copy the size and max_size from rhs
+  size = rhs.size;
+  max_size = rhs.max_size;
+
+  // If rhs is empty, just return
+  if (rhs.head == nullptr) {
+    return *this;
+  }
+
+  // Copy nodes from rhs
+  Node* rhsNodePtr = rhs.head;
+  Node* prevPtr = nullptr;
+  while (rhsNodePtr != nullptr) {
+    // Create a new node
+    Node* newNode = new Node;
+    newNode->data = rhsNodePtr->data;
+    newNode->next = nullptr;
+
+    // If this is the first node being added
+    if (prevPtr == nullptr) {
+      head = newNode;
+    } else {
+      prevPtr->next = newNode;
+    }
+
+    // Move pointers forward
+    prevPtr = newNode;
+    rhsNodePtr = rhsNodePtr->next;
+  }
+
   return *this;
 }
+
+// template <class T>
+// linkedlist<T>& linkedlist<T>::operator=(const linkedlist<T>& rhs) {
+//   Node* newNode = new Node;
+//   Node* nodePtr = rhs.head;
+//   Node* prevPtr = nullptr;
+//   if (head != nullptr) {
+//     clearList();
+//     size = rhs.size;
+//     max_size = rhs.max_size;
+//     while (nodePtr != nullptr) {
+//       newNode->data = nodePtr->data;
+//       newNode->next = nullptr;
+//       if (prevPtr == nullptr) {
+//         head = newNode;
+//       } else {
+//         prevPtr->next = newNode;
+//       }
+//       prevPtr = newNode;
+//       nodePtr = nodePtr->next;
+//     }
+//   }
+//   return *this;
+// }
 #endif
