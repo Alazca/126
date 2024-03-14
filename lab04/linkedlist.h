@@ -196,13 +196,13 @@ void linkedlist<T>::removeAt(int index) {
   size--;
 }
 
-template <class t>
-int linkedlist<t>::retrieveAt(int index) {
+template <class T>
+int linkedlist<T>::retrieveAt(int index) {
   Node* nodePtr = nullptr;
 
   if (index < 0 || index > size) {
     throw std::out_of_range(
-        "INVALID RETRIEVEVAL: index or out of range parameters!");
+        "INVALID RETRIEVEVAL: INDEX or OUT OF RANGE Parameters!");
   }
   nodePtr = head;
   for (int i = 0; i < index; i++) {
@@ -214,7 +214,6 @@ int linkedlist<t>::retrieveAt(int index) {
 template <class T>
 void linkedlist<T>::replaceAt(int index, T element) {
   Node* nodePtr = nullptr;
-
   if (index < 0 || index > size) {
     throw std::out_of_range(
         "invalid retrieval: index or out of range parameters!");
@@ -260,27 +259,4 @@ linkedlist<T>& linkedlist<T>::operator=(const linkedlist<T>& rhs) {
   return *this;
 }
 
-// template <class T>
-// linkedlist<T>& linkedlist<T>::operator=(const linkedlist<T>& rhs) {
-//   Node* newNode = new Node;
-//   Node* nodePtr = rhs.head;
-//   Node* prevPtr = nullptr;
-//   if (head != nullptr) {
-//     clearList();
-//     size = rhs.size;
-//     max_size = rhs.max_size;
-//     while (nodePtr != nullptr) {
-//       newNode->data = nodePtr->data;
-//       newNode->next = nullptr;
-//       if (prevPtr == nullptr) {
-//         head = newNode;
-//       } else {
-//         prevPtr->next = newNode;
-//       }
-//       prevPtr = newNode;
-//       nodePtr = nodePtr->next;
-//     }
-//   }
-//   return *this;
-// }
 #endif
