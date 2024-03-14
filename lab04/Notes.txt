@@ -1,0 +1,25 @@
+##### HP TASK ######
+
+-- Detail the operators that should be overloaded in the class that is passed as
+elemType, the template parameter.
+
+Overall, binary, unary, and arithmetic operators should be passed into the elemType template.
+This includes things such as <,>,>=,<=,++,--,*=,%, etc. 
+
+The C++ library (or other libraries) includes and seperates categories for opeartors that are able
+to be overloaded. If the programmer decides to include array operations and '[]' could also be passed
+with parameters and can be overloaded. The overloaded functions should be member functions applicable
+to how the designer thinks the abstraction should behave. 
+
+## References ##
+-- Linked List chapter 18 
+Gaddis, T. (2000). Starting Out with C++: From Control Structures through Objects. 
+
+-- Overloaded functions
+Main, M. G., & Savitch, W. J. (2004). Data structures and other objects using C++ (4th Edition) 
+(Savitch Series). 
+
+Malik, D. S. (2010). Data structures using C++. 
+
+Berman, A. M. (1997). Data Structures via C++: Objects by Evolution. 
+https://openlibrary.org/books/OL1002985M/Data_structures_via_C
