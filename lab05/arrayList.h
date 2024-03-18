@@ -8,9 +8,6 @@ const int MAX_SIZE = 100;
 template <class T>
 class arrayList {
 private:
-  // I've thought about using these member variables
-  // int element;
-  // int array[];
   T* array;
   int size;
   int capacity;
@@ -209,5 +206,12 @@ int arrayList<T>::count(const T& element) {
 };
 
 template <class T>
-void arrayList<T>::extend(const arrayList<T>* list){};
+void arrayList<T>::extend(const arrayList<T>* list) {
+  if (size + list->listSize() > MAX_SIZE) {
+    throw out_of_range("MAX SIZE REACHED: Extend Failure");
+  }
+  for (int i = 0; i < list->listSize(); i++) {
+    array[size++] = list->array[i];
+  }
+};
 #endif
