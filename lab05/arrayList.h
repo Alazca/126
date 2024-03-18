@@ -32,6 +32,12 @@ public:
   void replaceAt(int, const T&);
   void clearList();
   arrayList<T>& operator=(const arrayList<T>&);
+
+  // added for lab 5
+  T min() const;
+  T max() const;
+  int count(const T&);
+  void extend(const arrayList*);
 };
 
 template <class T>
@@ -88,7 +94,7 @@ bool arrayList<T>::isItemAtEqual(int index, const T& element) const {
 
 template <class T>
 void arrayList<T>::insertAt(int index, const T& element) {
-  if (index < 0 || index >= size) {
+  if (index <= -1 || index > size) {
     throw out_of_range("Out of range Insertion!");
   }
   if (this->isFull()) {
@@ -159,4 +165,49 @@ arrayList<T>& arrayList<T>::operator=(const arrayList<T>& rhs) {
   }
   return *this;
 }
+
+template <class T>
+T arrayList<T>::min() const {
+  T min = array[0];
+  if (isEmpty()) {
+    throw out_of_range("MIN ERROR: Array is Empty");
+  }
+  for (int i = 0; i < size; i++) {
+    if (array[i] < min) {
+      min = array[i];
+    }
+  }
+  return min;
+};
+
+template <class T>
+T arrayList<T>::max() const {
+  T max = array[0];
+  if (isEmpty()) {
+    throw out_of_range("MAX ERROR: Array is Empty");
+  }
+  for (int i = 0; i < size; i++) {
+    if (array[i] > max) {
+      max = array[i];
+    }
+  }
+  return max;
+};
+
+template <class T>
+int arrayList<T>::count(const T& element) {
+  if (isEmpty()) {
+    throw out_of_range("COUNT ERROR: Array is Empty");
+  }
+  int count = 0;
+  for (int i = 0; i < size; i++) {
+    if (array[i] == element) {
+      count++;
+    }
+  }
+  return count;
+};
+
+template <class T>
+void arrayList<T>::extend(const arrayList<T>* list){};
 #endif
