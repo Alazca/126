@@ -32,6 +32,12 @@ public:
   void replaceAt(int, T);
   void clearList();
   linkedlist& operator=(const linkedlist&);
+
+  // Added to lab 05
+  void extend(const linkedlist*);
+  T min() const;
+  T max() const;
+  int count(const T&);
 };
 
 template <class T>
@@ -258,6 +264,54 @@ linkedlist<T>& linkedlist<T>::operator=(const linkedlist<T>& rhs) {
   }
 
   return *this;
+}
+
+template <class T>
+void linkedlist<T>::extend(const linkedlist* list) {}
+
+template <class T>
+T linkedlist<T>::min() const {
+  Node* nodePtr = head;
+  T min;
+  if (isEmpty()) {
+    throw std::out_of_range("NO MIN: List is empty!");
+  }
+  while (nodePtr != nullptr) {
+    if (nodePtr->data < min) {
+      min = nodePtr->data;
+    }
+    nodePtr = nodePtr->next;
+  }
+  return min;
+}
+
+template <class T>
+T linkedlist<T>::max() const {
+  Node* nodePtr = head;
+  T max = nodePtr->data;
+  if (isEmpty()) {
+    throw std::out_of_range("NO MIN: List is empty!");
+  }
+  while (nodePtr != nullptr) {
+    if (nodePtr->data > max) {
+      max = nodePtr->data;
+    }
+    nodePtr = nodePtr->next;
+  }
+  return max;
+}
+
+template <class T>
+int linkedlist<T>::count(const T& element) {
+  int count = 0;
+  Node* nodePtr = head;
+  while (nodePtr != nullptr) {
+    if (nodePtr->data == element) {
+      count++;
+    }
+    nodePtr = nodePtr->next;
+  }
+  return count;
 }
 
 #endif

@@ -3,6 +3,7 @@
 
 CMakeFiles/a.dir/lab5-cmpe126.cpp.o: /home/alazca/development/126/lab05/lab5-cmpe126.cpp \
   /home/alazca/development/126/lab05/arrayList.h \
+  /home/alazca/development/126/lab05/linkedlist.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \
@@ -268,6 +269,10 @@ CMakeFiles/a.dir/lab5-cmpe126.cpp.o: /home/alazca/development/126/lab05/lab5-cmp
 
 /usr/include/c++/13.2.1/cwchar:
 
+/usr/include/c++/13.2.1/iosfwd:
+
+/usr/include/c++/13.2.1/cstdlib:
+
 /usr/include/bits/types/timer_t.h:
 
 /usr/include/bits/types/time_t.h:
@@ -275,8 +280,6 @@ CMakeFiles/a.dir/lab5-cmpe126.cpp.o: /home/alazca/development/126/lab05/lab5-cmp
 /usr/include/bits/types/struct_timeval.h:
 
 /usr/include/c++/13.2.1/bits/refwrap.h:
-
-/usr/include/bits/types/struct_timespec.h:
 
 /usr/include/bits/types/struct_sched_param.h:
 
@@ -293,10 +296,6 @@ CMakeFiles/a.dir/lab5-cmpe126.cpp.o: /home/alazca/development/126/lab05/lab5-cmp
 /usr/include/c++/13.2.1/bits/exception_defines.h:
 
 /usr/include/c++/13.2.1/bits/stl_function.h:
-
-/usr/include/bits/cpu-set.h:
-
-/usr/include/bits/uintn-identity.h:
 
 /usr/include/c++/13.2.1/debug/debug.h:
 
@@ -330,9 +329,9 @@ CMakeFiles/a.dir/lab5-cmpe126.cpp.o: /home/alazca/development/126/lab05/lab5-cmp
 
 /usr/include/asm/errno.h:
 
-/usr/include/bits/types/mbstate_t.h:
+/usr/include/bits/thread-shared-types.h:
 
-/usr/include/bits/types/sigset_t.h:
+/usr/include/c++/13.2.1/bits/new_allocator.h:
 
 /usr/include/features.h:
 
@@ -360,20 +359,6 @@ CMakeFiles/a.dir/lab5-cmpe126.cpp.o: /home/alazca/development/126/lab05/lab5-cmp
 
 /usr/include/c++/13.2.1/bits/basic_string.h:
 
-/usr/include/bits/struct_rwlock.h:
-
-/usr/include/bits/types/struct_itimerspec.h:
-
-/usr/include/c++/13.2.1/bits/istream.tcc:
-
-/usr/include/c++/13.2.1/string:
-
-/usr/include/c++/13.2.1/bits/ostream_insert.h:
-
-/home/alazca/development/126/lab05/lab5-cmpe126.cpp:
-
-/usr/include/bits/locale.h:
-
 /usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/atomic_word.h:
 
 /usr/include/bits/types/struct___jmp_buf_tag.h:
@@ -389,6 +374,28 @@ CMakeFiles/a.dir/lab5-cmpe126.cpp.o: /home/alazca/development/126/lab05/lab5-cmp
 /usr/include/asm-generic/errno-base.h:
 
 /usr/include/c++/13.2.1/bits/nested_exception.h:
+
+/usr/include/c++/13.2.1/bits/istream.tcc:
+
+/usr/include/bits/struct_rwlock.h:
+
+/usr/include/bits/types/struct_itimerspec.h:
+
+/usr/include/c++/13.2.1/string:
+
+/usr/include/c++/13.2.1/bits/ostream_insert.h:
+
+/home/alazca/development/126/lab05/lab5-cmpe126.cpp:
+
+/usr/include/bits/locale.h:
+
+/usr/include/bits/types/struct_timespec.h:
+
+/home/alazca/development/126/lab05/linkedlist.h:
+
+/usr/include/bits/types/mbstate_t.h:
+
+/usr/include/bits/types/sigset_t.h:
 
 /usr/include/bits/floatn.h:
 
@@ -416,13 +423,13 @@ CMakeFiles/a.dir/lab5-cmpe126.cpp.o: /home/alazca/development/126/lab05/lab5-cmp
 
 /usr/include/c++/13.2.1/bits/range_access.h:
 
+/usr/include/bits/cpu-set.h:
+
+/usr/include/bits/uintn-identity.h:
+
 /usr/include/c++/13.2.1/ext/alloc_traits.h:
 
 /usr/include/bits/struct_mutex.h:
-
-/usr/include/bits/thread-shared-types.h:
-
-/usr/include/c++/13.2.1/bits/new_allocator.h:
 
 /home/alazca/development/126/lab05/arrayList.h:
 
@@ -511,10 +518,6 @@ CMakeFiles/a.dir/lab5-cmpe126.cpp.o: /home/alazca/development/126/lab05/lab5-cmp
 /usr/include/bits/wchar.h:
 
 /usr/include/c++/13.2.1/bits/predefined_ops.h:
-
-/usr/include/c++/13.2.1/iosfwd:
-
-/usr/include/c++/13.2.1/cstdlib:
 
 /usr/include/c++/13.2.1/bits/requires_hosted.h:
 

@@ -135,4 +135,5 @@ CMakeFiles/a.dir/lab5-cmpe126.cpp.o: \
  /usr/include/c++/13.2.1/bits/basic_ios.tcc \
  /usr/include/c++/13.2.1/bits/ostream.tcc /usr/include/c++/13.2.1/istream \
  /usr/include/c++/13.2.1/bits/istream.tcc \
- /home/alazca/development/126/lab05/arrayList.h
+ /home/alazca/development/126/lab05/arrayList.h \
+ /home/alazca/development/126/lab05/linkedlist.h

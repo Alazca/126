@@ -3,11 +3,14 @@
 
 #include <iostream>
 using namespace std;
-const int MAX_SIZE = 100;
+const int MAX_SIZE = 200;
 
 template <class T>
 class arrayList {
 private:
+  // I've thought about using these member variables
+  // int element;
+  // int array[];
   T* array;
   int size;
   int capacity;
@@ -144,7 +147,6 @@ void arrayList<T>::replaceAt(int index, const T& element) {
 template <class T>
 void arrayList<T>::clearList() {
   size = 0;
-  cout << "List was cleared!\n";
 }
 
 template <class T>
@@ -207,7 +209,7 @@ int arrayList<T>::count(const T& element) {
 
 template <class T>
 void arrayList<T>::extend(const arrayList<T>* list) {
-  if (size + list->listSize() > MAX_SIZE) {
+  if (size > MAX_SIZE) {
     throw out_of_range("MAX SIZE REACHED: Extend Failure");
   }
   for (int i = 0; i < list->listSize(); i++) {
