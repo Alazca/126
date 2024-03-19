@@ -254,7 +254,7 @@ linkedlist<T>& linkedlist<T>::operator=(const linkedlist<T>& rhs) {
     newNode->next = nullptr;
 
     if (prevPtr == nullptr) {
-      head = newNode;
+      rhs.head = newNode;
     } else {
       prevPtr->next = newNode;
     }
@@ -267,7 +267,17 @@ linkedlist<T>& linkedlist<T>::operator=(const linkedlist<T>& rhs) {
 }
 
 template <class T>
-void linkedlist<T>::extend(const linkedlist* list) {}
+void linkedlist<T>::extend(const linkedlist* list) {
+  if (list->isEmpty()) {
+    std::cout << "List was empty" << std::endl;
+    return;
+  }
+  Node* nodePtr = list->head;
+  while (nodePtr != nullptr) {
+    insertEnd(nodePtr->data);
+    nodePtr = nodePtr->next;
+  }
+}
 
 template <class T>
 T linkedlist<T>::min() const {
