@@ -1,2 +1,20 @@
 ######### TASK 3 ##############
-1) To calculate the time complexity of each new function in TASK 1 and TASK 2, we need to analyze operations per index. 
+1) TO calculate time complexity of the added functions, we must account for each operationg depending on if its the arrayList or linkedlist class.
+
+arrayList functions:
+min():    This is 0(N) due to having to iterate through the size of the array. The amount of operations depends on the size.
+max():    This is 0(N) due to having to iterate through the size of the array. The amount of operations depends on the size.
+count():  This is 0(N) due to having to iterate through the size of the array. The amount of operations depends on the size.
+extend(): This is 0(N) due to having to iterate through the size of the array. The amount of operations depends on the size.
+
+
+linkedlist functions:
+min():    This is 0(N) due to having to iterate through the size of the list. The amount of operations depends on the size. Even if the first element is the lowest,
+the list must still continue forward each element to ensure minimization.
+
+max():    This is 0(N) due to having to iterate through the size of the list. The amount of operations depends on the size.
+
+count():  This is 0(N) due to having to iterate through the size of the list. The amount of operations depends on the size.
+
+extend(): This is 0(N) due to having to iterate through the size of the list. The amount of operations depends on the size. In a normal
+list, this is normally constant, but since we are extending by a certain amount, this transforms in complexity. 
