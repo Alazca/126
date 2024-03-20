@@ -1,2 +1,2 @@
 ######### TASK 3 ##############
-1) 
+1) To calculate the time complexity of each new function in TASK 1 and TASK 2, we need to analyze operations per index. 
