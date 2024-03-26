@@ -1,0 +1,37 @@
+I had role B - linked lists intially.
+
+### Task 1 ### 
+The O(1) solution for my linked list would be to gather the first element in
+a list. Due to how linked lists operate, it is nearly always based on the size of the list.
+
+// T getFirst();
+
+## Task 2 ###
+A function that doubles in size of operations would be to get the first and last element. This would
+be useful in a sorted array and we can determine what the range of values an operator would be working
+in.
+
+// T getRangeOfValues();
+
+
+## Task 3 ###
+An array operation that is proportional to the size of the list is print(). A loop would loop through
+each element of an array and display the contents to the user, element by element. A larger sized
+array, a longer output statement.
+
+// void print();
+
+
+## Task 4 ###
+An array operation that would do half the operations would be grab the median or mode of the set of values.
+The array size would be known and we can display either the top half or the lower half.
+
+// void printBelow();
+// void printAbove();
+
+
+## Task 5 ###
+O(n) functions depend the size of the data structure. As n approaches infinity, the amount of operations
+increase linearly. 
+
+
