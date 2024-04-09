@@ -1,0 +1,11 @@
+## Part 1 - Palindrome ##
+
+func isPalindrome(beginning, end);
+    if start >= end:                // Base case 
+        return true                 // The number is a palindrome
+    
+    if number[start] ≠ number[end]; // If the digits at start and end indices are not equal
+        return false                // The number is not a palindrome
+
+## Part 3 ## 
+

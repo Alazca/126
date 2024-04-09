@@ -1,0 +1,38 @@
+
+## Part 1 ##
+// function Padovan(n):
+// Base cases
+    if n == 0 OR n == 1 OR n == 2:
+        return 1
+    else:
+        return Padovan(n - 2) + Padovan(n - 3)
+
+// Usage:
+padovanNum = Padovan(n)
+
+
+## From WIKIPEDIA to check Padovan numbers##
+1, 1, 1, 2, 2, 3, 4, 5, 7, 9, 12, 16, 21, 28, 37, 49, 65, 86, 114, 151, 200, 265
+
+
+## Part 3: From my Output ##
+Function call: padovan(7)
+Function call: padovan(5)
+Function call: padovan(3)
+Function call: padovan(1)
+Function call: padovan(0)
+Return 2
+Function call: padovan(2)
+Return 3
+Function call: padovan(4)
+Function call: padovan(2)
+Function call: padovan(1)
+Return 2
+Return 5
+The 7th Padovan number is: 5
+
+## Part 4 for HP ##
+For high values of n, it is better to do iteratively. For smaller values of n, recursive and iterative
+are similar in complexity. The computational load for high values of n, make iterative a more efficient 
+approach. 
+

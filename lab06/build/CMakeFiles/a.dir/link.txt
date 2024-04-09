@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/a.dir/main.cpp.o CMakeFiles/a.dir/padovan.cpp.o CMakeFiles/a.dir/palindrome.cpp.o -o a
