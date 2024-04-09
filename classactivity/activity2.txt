@@ -34,4 +34,15 @@ The array size would be known and we can display either the top half or the lowe
 O(n) functions depend the size of the data structure. As n approaches infinity, the amount of operations
 increase linearly. 
 
+I had A's role initially. I worked with Andy Lazcano.
+
+Task 1: A list implemented with an array could achieve a retrieveAt() function in constant time.
+
+Task 2: A function to print out the first 2 elements in the list would be twice as many operations for a list implemented with an array.
+
+Task 3: For a list implemented with a singly linked list with no tail pointer, an insertEnd() function would take a number of operations equal to the size of the list.
+
+Task 4: For a list implemented with a singly linked list with no tail pointer, an insertMiddle() function would take a number of operations equal to half the size of the list.
+
+Task 5: For task 3, it is n operations. For task 4, it is n/2 operations. Both increase linearly as n increases.
 
