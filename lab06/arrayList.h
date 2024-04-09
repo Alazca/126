@@ -5,44 +5,43 @@
 using namespace std;
 const int MAX_SIZE = 200;
 
-template <class T>
-class arrayList {
+template <class T> class arrayList {
 private:
-  // I've thought about using these member variables
-  // int element;
-  // int array[];
-  T* array;
+  T *array;
   int size;
   int capacity;
 
 public:
   arrayList();
-  arrayList(const T&);
+  arrayList(const T &);
   ~arrayList();
   bool isEmpty() const;
   bool isFull() const;
   int listSize() const;
   int maxListSize() const;
   void print();
-  bool isItemAtEqual(int, const T&) const;
-  void insertAt(int, const T&);
-  void insertEnd(const T&);
+  bool isItemAtEqual(int, const T &) const;
+  void insertAt(int, const T &);
+  void insertEnd(const T &);
   void removeAt(int);
   T retrieveAt(int) const;
-  void replaceAt(int, const T&);
+  void replaceAt(int, const T &);
   void clearList();
-  arrayList<T>& operator=(const arrayList<T>&);
+  arrayList<T> &operator=(const arrayList<T> &);
 
   // added for lab 5
   T min() const;
   T max() const;
-  int count(const T&);
-  void extend(const arrayList*);
+  int count(const T &);
+  void extend(const arrayList *);
+
+  // added for lab 6
+  T getMinRecursive();
 };
 
 template <class T>
 // Default Constructor
-arrayList<T>::arrayList(const T& capacity_) {
+arrayList<T>::arrayList(const T &capacity_) {
   if (capacity_ < MAX_SIZE) {
     capacity = capacity_;
   }
@@ -50,33 +49,21 @@ arrayList<T>::arrayList(const T& capacity_) {
   array = new T[capacity];
 }
 
-template <class T>
-arrayList<T>::~arrayList() {
-  delete[] array;
+template <class T> arrayList<T>::~arrayList() { 
+  delete[] array; 
 }
 
-template <class T>
-bool arrayList<T>::isEmpty() const {
-  return size == 0;
-}
+template <class T> bool arrayList<T>::isEmpty() const { return size == 0; }
 
-template <class T>
-bool arrayList<T>::isFull() const {
+template <class T> bool arrayList<T>::isFull() const {
   return size == capacity;
 }
 
-template <class T>
-int arrayList<T>::listSize() const {
-  return size;
-}
+template <class T> int arrayList<T>::listSize() const { return size; }
 
-template <class T>
-int arrayList<T>::maxListSize() const {
-  return capacity;
-}
+template <class T> int arrayList<T>::maxListSize() const { return capacity; }
 
-template <class T>
-void arrayList<T>::print() {
+template <class T> void arrayList<T>::print() {
   for (int i = 0; i < size; i++) {
     cout << "Index " << i << " = " << array[i] << endl;
   }
@@ -84,7 +71,7 @@ void arrayList<T>::print() {
 }
 
 template <class T>
-bool arrayList<T>::isItemAtEqual(int index, const T& element) const {
+bool arrayList<T>::isItemAtEqual(int index, const T &element) const {
   // Checks to see if index is positive number or within overall size of array
   if (index < 0 || index >= size) {
     throw out_of_range("Out of Range Equal Assertion!");
@@ -92,8 +79,7 @@ bool arrayList<T>::isItemAtEqual(int index, const T& element) const {
   return array[index] == element;
 }
 
-template <class T>
-void arrayList<T>::insertAt(int index, const T& element) {
+template <class T> void arrayList<T>::insertAt(int index, const T &element) {
   if (index <= -1 || index > size) {
     throw out_of_range("Out of range Insertion!");
   }
@@ -107,8 +93,7 @@ void arrayList<T>::insertAt(int index, const T& element) {
   size++;
 }
 
-template <class T>
-void arrayList<T>::insertEnd(const T& element) {
+template <class T> void arrayList<T>::insertEnd(const T &element) {
   if (this->isFull()) {
     throw out_of_range("At capacity, can not insert");
   }
@@ -117,8 +102,7 @@ void arrayList<T>::insertEnd(const T& element) {
   }
 }
 
-template <class T>
-void arrayList<T>::removeAt(int index) {
+template <class T> void arrayList<T>::removeAt(int index) {
   if (index < 0 || index >= size) {
     throw out_of_range("Out of Range Removal!");
   }
@@ -128,29 +112,24 @@ void arrayList<T>::removeAt(int index) {
   size--;
 }
 
-template <class T>
-T arrayList<T>::retrieveAt(int index) const {
+template <class T> T arrayList<T>::retrieveAt(int index) const {
   if (index < 0 || index >= size) {
     throw out_of_range("Out of Range Retrieval!");
   }
   return array[index];
 }
 
-template <class T>
-void arrayList<T>::replaceAt(int index, const T& element) {
+template <class T> void arrayList<T>::replaceAt(int index, const T &element) {
   if (index < 0 || index >= size) {
     throw out_of_range("Out of Range Replacement!");
   }
   array[index] = element;
 }
 
-template <class T>
-void arrayList<T>::clearList() {
-  size = 0;
-}
+template <class T> void arrayList<T>::clearList() { size = 0; }
 
 template <class T>
-arrayList<T>& arrayList<T>::operator=(const arrayList<T>& rhs) {
+arrayList<T> &arrayList<T>::operator=(const arrayList<T> &rhs) {
   // Checks if array is not equal first, if it is not the same, replace it
   // 100%
   if (this != &rhs) {
@@ -165,8 +144,7 @@ arrayList<T>& arrayList<T>::operator=(const arrayList<T>& rhs) {
   return *this;
 }
 
-template <class T>
-T arrayList<T>::min() const {
+template <class T> T arrayList<T>::min() const {
   T min = array[0];
   if (isEmpty()) {
     throw out_of_range("MIN ERROR: Array is Empty");
@@ -179,8 +157,7 @@ T arrayList<T>::min() const {
   return min;
 };
 
-template <class T>
-T arrayList<T>::max() const {
+template <class T> T arrayList<T>::max() const {
   T max = array[0];
   if (isEmpty()) {
     throw out_of_range("MAX ERROR: Array is Empty");
@@ -193,8 +170,7 @@ T arrayList<T>::max() const {
   return max;
 };
 
-template <class T>
-int arrayList<T>::count(const T& element) {
+template <class T> int arrayList<T>::count(const T &element) {
   if (isEmpty()) {
     throw out_of_range("COUNT ERROR: Array is Empty");
   }
@@ -207,8 +183,8 @@ int arrayList<T>::count(const T& element) {
   return count;
 };
 
-template <class T>
-void arrayList<T>::extend(const arrayList<T>* list) {
+template <class T> 
+void arrayList<T>::extend(const arrayList<T> *list) {
   if (size > MAX_SIZE) {
     throw out_of_range("MAX SIZE REACHED: Extend Failure");
   }
@@ -216,4 +192,16 @@ void arrayList<T>::extend(const arrayList<T>* list) {
     array[size++] = list->array[i];
   }
 };
+
+template <class T> 
+T arrayList<T>::getMinRecursive() {
+  if (size == 0){
+    throw out_of_range("EMPTY ERROR: List is empty!");
+  }
+  // Base case
+  if (size == 1){
+    return array[0];
+  }
+
+}
 #endif

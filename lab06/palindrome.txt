@@ -1,11 +1,13 @@
 ## Part 1 - Palindrome ##
-
-func isPalindrome(beginning, end);
-    if start >= end:                // Base case 
+func isPalindrome(int);
+    if its a single digit:                // Base case 
         return true                 // The number is a palindrome
     
-    if number[start] ≠ number[end]; // If the digits at start and end indices are not equal
-        return false                // The number is not a palindrome
+    check each digit;                 // If the digits at start and end indices are not equal
+      if first ! = last;
+       return false                // The number is not a palindrome
 
-## Part 3 ## 
+## Part 3 ##
+Since the palindrome algorithym checks array element by size, this is O(n). As the number 
+increases by magnitude of 10, the checker performs an extra computation. 
 
