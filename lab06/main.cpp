@@ -10,7 +10,6 @@ int main() {
   unsigned int result = padovan(n);
   cout << "The " << n << "th Padovan number is: " << result << endl;
   // Palindrome checker
-  
   cout << "\nPALINDROME CHECKER!\n" << endl;
   int pNum1 = 12321;
   int pNum2 = 1331;

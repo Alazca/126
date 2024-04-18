@@ -1,0 +1,11 @@
+
+// decimal to string
+string decToBin(unsigned int decNum){
+    if(decNum < 2){
+        return to_string(decNum);
+    }
+    else{
+        return decToBin(decNum/2) + to_string(decNum%2);
+    }
+
+}

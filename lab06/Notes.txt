@@ -2,8 +2,10 @@
 Nyhoff, L. R. (2004). ADTs, Data Structures, and Problem Solving with C++. Pearson.
 Gaddis, T. (2016). Starting Out with C++: From Control Structures Through Objects. Addison-Wesley.
 
--- Used to clarify the reverse implementation 
+-- Used to clarify the reverse implementation, ended up using another method 
 https://prepinsta.com/cpp-program/cpp-program-to-check-whether-a-number-is-palindrome-or-not/
 
 ## From WIKIPEDIA to check Padovan numbers##
 1, 1, 1, 2, 2, 3, 4, 5, 7, 9, 12, 16, 21, 28, 37, 49, 65, 86, 114, 151, 200, 265
+
+I started to implement HP task 3, but decided to hold off due to time constraints. 

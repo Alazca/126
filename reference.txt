@@ -1,0 +1,22 @@
+Linked Lists:
+
+Insert beginning:
+  1 Perform checks
+  2 New Node (Node* newNode = new Node;)
+  3 Point data to new element being inserted
+  4 Point next pointer to NULL
+  5 If at the beginning, newNode->next = head;
+  6 Node = head;
+  7 Loop through index, the index handles the necessary stopping point
+    for (int i = 0; i < index - 1; i++) {
+      nodePtr = nodePtr->next;
+    }
+  8 Point the new node next pointer to the original nodeptr pointer
+  9 Point the original next pointer to the new Node.
+    newNode->next = nodePtr->next;
+    nodePtr->next = newNode;
+  10 Increment size
+
+Time Complexity
+  
+

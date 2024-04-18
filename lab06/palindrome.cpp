@@ -1,15 +1,17 @@
 #include <iostream>
 using namespace std;
 
-bool check_palindrome(const int& num) {
-    if (num < 0) {
+bool palindromeHelper(const string& str, int start, int end) {
+    if (start >= end) {
+        return true; 
+    }
+    if (str[start] != str[end]) {
         return false; 
     }
-    int reverse = 0;
-    int temp = num; 
-    while (temp != 0) {
-        reverse = (reverse * 10) + temp % 10; 
-        temp /= 10; 
-    }
-    return num == reverse;
+    return palindromeHelper(str, start + 1, end - 1); 
+}
+
+bool check_palindrome(const int& num) {
+    string str = to_string(num);
+    return palindromeHelper(str, 0, str.length() - 1);
 }
