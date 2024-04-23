@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/a.dir/Calculator.cpp.o CMakeFiles/a.dir/main.cpp.o CMakeFiles/a.dir/recurisiveNumber.cpp.o -o a

@@ -1,0 +1,20 @@
+// Pseudo code
+
+// Function to recursively reverse a number
+// Base Case
+  if num is 0, return result
+  Mod input, extract number
+  Divide num / 10
+  New Reverse number is (num * 10)) + first digit
+  return reverseNumber
+}
+
+
+## References ##
+
+Gaddis, T. (2000). Starting Out with C++: From Control Structures through Objects. 
+
+Main, M. G., & Savitch, W. J. (2004). Data structures and other objects using C++ (4th Edition) 
+(Savitch Series). 
+
+
